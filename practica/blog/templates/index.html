@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+  My Blog
+{% endblock %}
+
+{% block css_files %}
+  <link rel="stylesheet" href="{% static "post.css" %}">
+  <link rel="stylesheet" href="{% static "index.css" %}">
+{% endblock %}
+
+{% block content %}
+  <section id="welcome">
+    <header>
+      <img src="{% static "images/5361741979127504816 (1).jpg"%}" alt="babylove_cv with love for our children" />
+      <h2>babylove_cv</h2>
+    </header>
+    <p>with love for our children</p>
+  </section>
+
+  <section id="latest-posts">
+    <h2>assortment</h2>
+    <ul>
+      {% for post in posts %}
+        {% include "includes/post.html" %}
+      {% endfor %}
+    </ul>
+
+  </section>
+  <section id="about">
+    <h2>babylove_cv</h2>
+    <p>іграшки ручної роботи
+    </p>
+    <p>
+     з любов'ю та увагою до найменших деталей
+    </p>
+  </section>
+{% endblock %}
