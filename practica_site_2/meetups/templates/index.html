@@ -1,0 +1,30 @@
+{% extends "base/base.html" %}
+
+{% load static %}
+
+{%block title%}Babylove_cv{% endblock %}
+
+{% block site_css  %}
+    <link rel="stylesheet" href="{% static 'styles/all-meetups.css' %}">
+{% endblock %}
+
+{% block main_heading %}
+made toys for you
+{% endblock %}
+
+{% block main_content %}
+<p>perfect gift for your children</p>
+{% endblock %}
+
+{% block body %}
+    <main>
+        <section >
+            <h2>assortment</h2>
+            <ol>
+                {% for meetup_item in meetups  %}
+                {% include 'includes/meetup-item.html' with title=meetup_item.title image=meetup_item.image.url location='Ukraine' slug=meetup_item.slug %}
+                {% endfor %}
+            </ol>
+        </section >
+    </main>
+{% endblock  %}
